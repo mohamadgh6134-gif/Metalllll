@@ -192,7 +192,7 @@
 
                 <!-- عرض ورق -->
                 <div>
-                    <label for="sheetWidth" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض ورق (Width)</label>
+                    <label for="sheetWidth" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض قطعه (Part Width)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
                         <input type="number" id="sheetWidth" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 1000 یا 100" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <select id="sheetWidthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 border-r border-slate-200 focus:outline-none cursor-pointer">
@@ -240,7 +240,7 @@
 
             <!-- ورودی مشترک طول (Length) -->
             <div>
-                <label for="commonLength" class="block text-xs font-semibold text-slate-600 mb-1.5">طول شاخه / قطعه (Length)</label>
+                <label for="commonLength" class="block text-xs font-semibold text-slate-600 mb-1.5">طول قطعه (Part Length)</label>
                 <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
                     <input type="number" id="commonLength" inputmode="decimal" step="any" min="0" value="1" placeholder="مثلاً: 6 یا 2000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                     <select id="commonLengthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-3 border-r border-slate-200 focus:outline-none cursor-pointer">
@@ -253,7 +253,7 @@
 
             <!-- ورودی مشترک تعداد (Quantity) -->
             <div>
-                <label for="commonQuantity" class="block text-xs font-semibold text-slate-600 mb-1.5">تعداد (شاخه / برگ)</label>
+                <label for="commonQuantity" class="block text-xs font-semibold text-slate-600 mb-1.5">تعداد قطعه (Quantity)</label>
                 <div class="flex items-center gap-2">
                     <button type="button" onclick="adjustQuantity(-1)" class="no-select w-12 h-12 rounded-xl bg-slate-100 hover:bg-slate-200 active:scale-95 border border-slate-300 text-slate-700 font-bold text-xl flex items-center justify-center transition">−</button>
                     <input type="number" id="commonQuantity" inputmode="numeric" min="1" step="1" value="1" oninput="calculateWeight()" class="w-full h-12 text-center bg-slate-50 border border-slate-300 rounded-xl text-base font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500" dir="ltr">
@@ -274,7 +274,7 @@
                     </div>
                     <div>
                         <h3 class="text-sm font-bold text-slate-800">محاسبه وزن ناخالص و پرتی تولید</h3>
-                        <p class="text-[11px] text-slate-500">محاسبه با درصد پرتی، عرض کویل یا شاخه استاندارد</p>
+                        <p class="text-[11px] text-slate-500">محاسبه با درصد پرتی، وزن و عرض کویل یا شاخه استاندارد</p>
                     </div>
                 </div>
 
@@ -323,7 +323,15 @@
                     <!-- زیربخش کویل مخصوص ورق -->
                     <div id="stockCoilFields" class="space-y-3">
                         <div>
-                            <label for="coilWidthInput" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض کویل / رول مادر (Coil Width)</label>
+                            <label for="coilNetWeightInput" class="block text-xs font-semibold text-slate-600 mb-1.5">وزن خالص کویل (Net Coil Weight)</label>
+                            <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
+                                <input type="number" id="coilNetWeightInput" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 5000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">کیلوگرم (kg)</span>
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-1">وزن خالص فلز کویل؛ وزن بسته‌بندی و قرقره لحاظ نشود.</p>
+                        </div>
+                        <div>
+                            <label for="coilWidthInput" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض کویل مادر (Coil Width)</label>
                             <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
                                 <input type="number" id="coilWidthInput" inputmode="decimal" step="any" min="0" value="1250" placeholder="مثلاً: 1000 یا 1250" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                                 <select id="coilWidthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 border-r border-slate-200 focus:outline-none cursor-pointer">
@@ -647,7 +655,7 @@
             const barFields = document.getElementById('stockBarFields');
 
             if (currentShape === 'sheet') {
-                label.textContent = 'بر اساس عرض کویل';
+                label.textContent = 'بر اساس مشخصات کویل';
                 coilFields.classList.remove('hidden');
                 barFields.classList.add('hidden');
             } else {
@@ -757,6 +765,18 @@
         }
 
         /**
+         * قالب‌بندی اعداد برای نمایش یکنواخت در رابط کاربری و گزارش‌ها
+         */
+        function formatNumber(value, decimals = 2) {
+            const number = Number(value);
+            if (!Number.isFinite(number)) return '—';
+            return number.toLocaleString('en-US', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals
+            });
+        }
+
+        /**
          * تبدیل واحد طول به میلی‌متر (mm)
          */
         function toMillimeters(value, unit) {
@@ -784,6 +804,9 @@
         function resetInputs() {
             document.getElementById('sheetThickness').value = '';
             document.getElementById('sheetWidth').value = '';
+            document.getElementById('coilNetWeightInput').value = '';
+            document.getElementById('coilWidthInput').value = '1250';
+            document.getElementById('coilLengthScrapInput').value = '0';
             document.getElementById('pipeOuterDiameter').value = '';
             document.getElementById('pipeWallThickness').value = '';
             document.getElementById('rodDiameter').value = '';
@@ -807,7 +830,8 @@
             const lengthUnit = document.getElementById('commonLengthUnit').value;
             const lengthMm = toMillimeters(rawLength, lengthUnit);
 
-            const qty = Math.max(1, parseInt(document.getElementById('commonQuantity').value) || 1);
+            const qtyRaw = Number(document.getElementById('commonQuantity').value);
+            const qty = Number.isInteger(qtyRaw) && qtyRaw > 0 ? qtyRaw : 0;
             document.getElementById('resultQtyText').textContent = qty.toLocaleString('fa-IR');
 
             let volumeMm3 = 0; // حجم یک عدد بر حسب میلی‌متر مکعب
@@ -868,7 +892,11 @@
 
             const stockAlert = document.getElementById('stockValidationAlert');
 
-            if (isGrossEnabled) {
+            if (isGrossEnabled && qty <= 0) {
+                hasStockError = true;
+                stockAlert.textContent = 'تعداد قطعه باید یک عدد صحیح بزرگ‌تر از صفر باشد.';
+                stockAlert.classList.remove('hidden');
+            } else if (isGrossEnabled) {
                 if (grossMode === 'percent') {
                     stockAlert.classList.add('hidden');
                     const scrapPct = Math.max(0, parseFloat(document.getElementById('scrapPercentInput').value) || 0);
@@ -882,36 +910,60 @@
                 } else {
                     // روش دوم: بر اساس عرض کویل (ورق) یا طول شاخه استاندارد (لوله/مفتول)
                     if (currentShape === 'sheet') {
-                        const rawCoilW = parseFloat(document.getElementById('coilWidthInput').value) || 0;
+                        const coilNetWeightKg = Number(document.getElementById('coilNetWeightInput').value);
+                        const rawCoilW = Number(document.getElementById('coilWidthInput').value);
                         const coilUnit = document.getElementById('coilWidthUnit').value;
                         const coilWidthMm = toMillimeters(rawCoilW, coilUnit);
-                        const lengthScrapPct = Math.max(0, parseFloat(document.getElementById('coilLengthScrapInput').value) || 0);
+                        const sheetThicknessMm = Number(document.getElementById('sheetThickness').value) || 0;
+                        const lengthScrapPct = Math.max(0, Number(document.getElementById('coilLengthScrapInput').value) || 0);
 
-                        if (sheetWidthMm > 0 && coilWidthMm > 0) {
+                        if (sheetWidthMm > 0 && coilWidthMm > 0 && sheetThicknessMm > 0 && lengthMm > 0 &&
+                            Number.isFinite(coilNetWeightKg) && coilNetWeightKg > 0) {
                             if (sheetWidthMm > coilWidthMm) {
                                 hasStockError = true;
-                                stockAlert.textContent = `⚠️ عرض قطعه (${sheetWidthMm}mm) از عرض کویل (${coilWidthMm}mm) بزرگتر است!`;
+                                stockAlert.textContent = `عرض قطعه (${formatNumber(sheetWidthMm, 1)} mm) از عرض کویل (${formatNumber(coilWidthMm, 1)} mm) بیشتر است.`;
+                                stockAlert.classList.remove('hidden');
+                            } else if (lengthScrapPct >= 100) {
+                                hasStockError = true;
+                                stockAlert.textContent = 'درصد پرتی طولی باید کمتر از 100 باشد.';
                                 stockAlert.classList.remove('hidden');
                             } else {
-                                stockAlert.classList.add('hidden');
+                                // طول تقریبی کویل از وزن خالص، عرض، ضخامت و چگالی محاسبه می‌شود.
+                                const coilLengthMm = (coilNetWeightKg * 1000000) /
+                                    (coilWidthMm * sheetThicknessMm * material.density);
                                 const stripsCount = Math.floor(coilWidthMm / sheetWidthMm);
                                 const usedWidthMm = stripsCount * sheetWidthMm;
                                 const edgeTrimMm = coilWidthMm - usedWidthMm;
                                 const widthWastePct = (edgeTrimMm / coilWidthMm) * 100;
 
-                                // وزن ناخالص با لحاظ کردن پرتی عرضی کویل + پرتی طولی اختیاری
-                                const widthFactor = coilWidthMm / usedWidthMm;
-                                const lengthFactor = 1 + (lengthScrapPct / 100);
+                                // تعداد ردیف‌های لازم برای تولید تیراژ؛ ردیف آخر ممکن است کامل پر نشود.
+                                const rowsNeeded = Math.ceil(qty / stripsCount);
+                                const requiredCoilLengthMm = rowsNeeded * lengthMm * (1 + lengthScrapPct / 100);
+                                const usableLengthMm = coilLengthMm;
+                                const capacityRows = Math.floor(usableLengthMm / (lengthMm * (1 + lengthScrapPct / 100)));
+                                const maxPiecesFromCoil = capacityRows * stripsCount;
 
-                                unitGrossWeightKg = unitNetWeightKg * widthFactor * lengthFactor;
-                                totalGrossWeightKg = unitGrossWeightKg * qty;
-                                wasteWeightKg = totalGrossWeightKg - totalNetWeightKg;
-                                wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
+                                if (requiredCoilLengthMm > usableLengthMm) {
+                                    hasStockError = true;
+                                    stockAlert.textContent = `وزن کویل برای این تیراژ کافی نیست. ظرفیت تقریبی این کویل: ${maxPiecesFromCoil.toLocaleString('fa-IR')} قطعه؛ تعداد درخواستی: ${qty.toLocaleString('fa-IR')} قطعه.`;
+                                    stockAlert.classList.remove('hidden');
+                                } else {
+                                    stockAlert.classList.add('hidden');
+                                    const coilKgPerMm = coilNetWeightKg / coilLengthMm;
+                                    totalGrossWeightKg = coilKgPerMm * requiredCoilLengthMm;
+                                    unitGrossWeightKg = totalGrossWeightKg / qty;
+                                    wasteWeightKg = Math.max(0, totalGrossWeightKg - totalNetWeightKg);
+                                    wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
 
-                                nestingDetail = `${stripsCount} نوار از کویل ${coilWidthMm}mm | پرتی کناره: ${edgeTrimMm.toFixed(1)}mm (${widthWastePct.toFixed(1)}%)${lengthScrapPct > 0 ? ` + ${lengthScrapPct}% پرتی طولی` : ''}`;
+                                    const remainingLengthMm = Math.max(0, coilLengthMm - requiredCoilLengthMm);
+                                    const remainingCoilWeightKg = Math.max(0, coilNetWeightKg - totalGrossWeightKg);
+                                    nestingDetail = `کویل ${formatNumber(coilNetWeightKg, 1)} kg | طول تقریبی ${formatNumber(coilLengthMm / 1000, 1)} m | ${stripsCount} نوار در هر ردیف | ${rowsNeeded} ردیف برش | پرت کناره ${formatNumber(edgeTrimMm, 1)} mm (${formatNumber(widthWastePct, 1)}%) | طول مصرفی ${formatNumber(requiredCoilLengthMm / 1000, 2)} m | مانده کویل ${formatNumber(remainingCoilWeightKg, 1)} kg (${formatNumber(remainingLengthMm / 1000, 1)} m)`;
+                                }
                             }
                         } else {
-                            stockAlert.classList.add('hidden');
+                            hasStockError = true;
+                            stockAlert.textContent = 'برای محاسبه بر اساس کویل، وزن خالص کویل، عرض کویل، ضخامت ورق و ابعاد قطعه را وارد کنید.';
+                            stockAlert.classList.remove('hidden');
                         }
                     } else {
                         // لوله یا مفتول: محاسبه بر اساس شاخه استاندارد (مثلاً 6 یا 12 متر)
@@ -927,17 +979,18 @@
                             } else {
                                 stockAlert.classList.add('hidden');
                                 const piecesPerBar = Math.floor(barLengthMm / lengthMm);
-                                const usedLengthMm = piecesPerBar * lengthMm;
-                                const offcutMm = barLengthMm - usedLengthMm;
-                                const barWastePct = (offcutMm / barLengthMm) * 100;
+                                const barsNeeded = Math.ceil(qty / piecesPerBar);
+                                const totalStockLengthMm = barsNeeded * barLengthMm;
+                                const totalNetLengthMm = qty * lengthMm;
+                                const barFactor = totalStockLengthMm / totalNetLengthMm;
 
-                                const barFactor = barLengthMm / usedLengthMm;
-                                unitGrossWeightKg = unitNetWeightKg * barFactor;
-                                totalGrossWeightKg = unitGrossWeightKg * qty;
-                                wasteWeightKg = totalGrossWeightKg - totalNetWeightKg;
+                                totalGrossWeightKg = totalNetWeightKg * barFactor;
+                                unitGrossWeightKg = totalGrossWeightKg / qty;
+                                wasteWeightKg = Math.max(0, totalGrossWeightKg - totalNetWeightKg);
                                 wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
 
-                                nestingDetail = `${piecesPerBar} قطعه از هر شاخه ${rawBarL}${barUnit} | پرتی ته شاخه: ${offcutMm.toFixed(0)}mm (${barWastePct.toFixed(1)}%)`;
+                                const totalOffcutMm = totalStockLengthMm - totalNetLengthMm;
+                                nestingDetail = `${piecesPerBar} قطعه از هر شاخه ${rawBarL}${barUnit} | تعداد شاخه موردنیاز: ${barsNeeded} | مجموع باقی‌مانده / پرت: ${formatNumber(totalOffcutMm / 1000, 3)} m`;
                             }
                         } else {
                             stockAlert.classList.add('hidden');
@@ -976,7 +1029,7 @@
             }
 
             return {
-                isValid: totalNetWeightKg > 0 && !hasStockError,
+                isValid: totalNetWeightKg > 0 && qty > 0 && !hasStockError,
                 isGrossEnabled,
                 unitNetWeightKg,
                 totalNetWeightKg,
@@ -998,7 +1051,7 @@
         function addToBom() {
             const calc = calculateWeight();
             if (!calc.isValid) {
-                showToast('لطفاً ابتدا ابعاد را به درستی وارد کنید!', '⚠️');
+                showToast('لطفاً تعداد و ابعاد را به‌درستی وارد کنید!', '⚠️');
                 return;
             }
 
@@ -1289,7 +1342,7 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            URL.revokeObjectURL(url);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
 
             showToast('فایل اکسل (CSV) با موفقیت دانلود شد', '📊');
         }
