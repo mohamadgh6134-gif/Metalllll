@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- تنظیمات PWA و ظاهر اپلیکیشن موبایل برای اندروید و iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -160,7 +160,7 @@
             <div id="customDensityBox" class="hidden pt-1">
                 <label for="customDensityInput" class="block text-xs font-medium text-slate-600 mb-1">چگالی دلخواه را وارد کنید (گرم بر سانتی‌متر مکعب):</label>
                 <div class="relative flex items-center">
-                    <input type="number" id="customDensityInput" inputmode="decimal" step="0.01" min="0.1" placeholder="مثلاً: 7.85" oninput="calculateWeight()" class="w-full bg-amber-50/50 border border-amber-300 text-slate-900 font-bold text-base rounded-xl px-3.5 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" dir="ltr">
+                    <input type="text" id="customDensityInput" inputmode="decimal" step="0.01" min="0.1" placeholder="مثلاً: 7.85" oninput="calculateWeight()" class="w-full bg-amber-50/50 border border-amber-300 text-slate-900 font-bold text-base rounded-xl px-3.5 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500" dir="ltr">
                     <span class="absolute right-3.5 text-xs font-mono text-slate-500">g/cm³</span>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                 <div>
                     <label for="sheetThickness" class="block text-xs font-semibold text-slate-600 mb-1.5">ضخامت ورق (Thickness)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                        <input type="number" id="sheetThickness" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 2" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                        <input type="text" id="sheetThickness" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 2" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">میلی‌متر (mm)</span>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                 <div>
                     <label for="sheetWidth" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض قطعه (Part Width)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                        <input type="number" id="sheetWidth" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 1000 یا 100" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                        <input type="text" id="sheetWidth" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 1000 یا 100" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <select id="sheetWidthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 border-r border-slate-200 focus:outline-none cursor-pointer">
                             <option value="mm">میلی‌متر (mm)</option>
                             <option value="cm">سانتی‌متر (cm)</option>
@@ -210,7 +210,7 @@
                 <div>
                     <label for="pipeOuterDiameter" class="block text-xs font-semibold text-slate-600 mb-1.5">قطر بیرونی لوله (OD)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                        <input type="number" id="pipeOuterDiameter" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 60" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                        <input type="text" id="pipeOuterDiameter" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 60" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">میلی‌متر (mm)</span>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                 <div>
                     <label for="pipeWallThickness" class="block text-xs font-semibold text-slate-600 mb-1.5">ضخامت گوشت / دیواره لوله (Wall)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                        <input type="number" id="pipeWallThickness" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 2.5" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                        <input type="text" id="pipeWallThickness" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 2.5" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">میلی‌متر (mm)</span>
                     </div>
                     <p id="pipeValidationMsg" class="hidden text-xs text-rose-600 font-semibold mt-1">⚠️ ضخامت دیواره باید کمتر از نصف قطر بیرونی باشد!</p>
@@ -232,7 +232,7 @@
                 <div>
                     <label for="rodDiameter" class="block text-xs font-semibold text-slate-600 mb-1.5">قطر مفتول یا میلگرد (Diameter)</label>
                     <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                        <input type="number" id="rodDiameter" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 12" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                        <input type="text" id="rodDiameter" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 12" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                         <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">میلی‌متر (mm)</span>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
             <div>
                 <label for="commonLength" class="block text-xs font-semibold text-slate-600 mb-1.5">طول قطعه (Part Length)</label>
                 <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                    <input type="number" id="commonLength" inputmode="decimal" step="any" min="0" value="1" placeholder="مثلاً: 6 یا 2000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                    <input type="text" id="commonLength" inputmode="decimal" step="any" min="0" value="1" placeholder="مثلاً: 6 یا 2000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-3 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                     <select id="commonLengthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-3 border-r border-slate-200 focus:outline-none cursor-pointer">
                         <option value="m" selected>متر (m)</option>
                         <option value="cm">سانتی‌متر (cm)</option>
@@ -256,9 +256,10 @@
                 <label for="commonQuantity" class="block text-xs font-semibold text-slate-600 mb-1.5">تعداد قطعه (Quantity)</label>
                 <div class="flex items-center gap-2">
                     <button type="button" onclick="adjustQuantity(-1)" class="no-select w-12 h-12 rounded-xl bg-slate-100 hover:bg-slate-200 active:scale-95 border border-slate-300 text-slate-700 font-bold text-xl flex items-center justify-center transition">−</button>
-                    <input type="number" id="commonQuantity" inputmode="numeric" min="1" step="1" value="1" oninput="calculateWeight()" class="w-full h-12 text-center bg-slate-50 border border-slate-300 rounded-xl text-base font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500" dir="ltr">
+                    <input type="text" id="commonQuantity" inputmode="numeric" min="1" step="1" value="1" oninput="calculateWeight()" class="w-full h-12 text-center bg-slate-50 border border-slate-300 rounded-xl text-base font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500" dir="ltr">
                     <button type="button" onclick="adjustQuantity(1)" class="no-select w-12 h-12 rounded-xl bg-slate-100 hover:bg-slate-200 active:scale-95 border border-slate-300 text-slate-700 font-bold text-xl flex items-center justify-center transition">+</button>
                 </div>
+                <p id="qtyValidationMsg" class="hidden text-xs text-rose-600 font-semibold mt-1">تعداد باید یک عدد صحیح و بزرگ‌تر از صفر باشد.</p>
             </div>
         </section>
 
@@ -302,7 +303,7 @@
                     <div>
                         <label for="scrapPercentInput" class="block text-xs font-semibold text-slate-600 mb-1.5">درصد پرتی و ضایعات برش (%)</label>
                         <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                            <input type="number" id="scrapPercentInput" inputmode="decimal" step="any" min="0" value="5" placeholder="مثلاً: 5" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                            <input type="text" id="scrapPercentInput" inputmode="decimal" step="any" min="0" value="5" placeholder="مثلاً: 5" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                             <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">درصد (%)</span>
                         </div>
                     </div>
@@ -325,7 +326,7 @@
                         <div>
                             <label for="coilNetWeightInput" class="block text-xs font-semibold text-slate-600 mb-1.5">وزن خالص کویل (Net Coil Weight)</label>
                             <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                                <input type="number" id="coilNetWeightInput" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 5000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                                <input type="text" id="coilNetWeightInput" inputmode="decimal" step="any" min="0" placeholder="مثلاً: 5000" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                                 <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3.5 flex items-center border-r border-slate-200 select-none">کیلوگرم (kg)</span>
                             </div>
                             <p class="text-[10px] text-slate-500 mt-1">وزن خالص فلز کویل؛ وزن بسته‌بندی و قرقره لحاظ نشود.</p>
@@ -333,7 +334,7 @@
                         <div>
                             <label for="coilWidthInput" class="block text-xs font-semibold text-slate-600 mb-1.5">عرض کویل مادر (Coil Width)</label>
                             <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                                <input type="number" id="coilWidthInput" inputmode="decimal" step="any" min="0" value="1250" placeholder="مثلاً: 1000 یا 1250" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                                <input type="text" id="coilWidthInput" inputmode="decimal" step="any" min="0" value="1250" placeholder="مثلاً: 1000 یا 1250" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                                 <select id="coilWidthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 border-r border-slate-200 focus:outline-none cursor-pointer">
                                     <option value="mm" selected>میلی‌متر (mm)</option>
                                     <option value="cm">سانتی‌متر (cm)</option>
@@ -351,9 +352,9 @@
                         </div>
 
                         <div>
-                            <label for="coilLengthScrapInput" class="block text-xs font-semibold text-slate-600 mb-1.5">پرتی طولی / سر و ته کویل (اختیاری - %)</label>
+                            <label for="coilLengthScrapInput" class="block text-xs font-semibold text-slate-600 mb-1.5">درصد افزوده به طول مصرفی برای سر و ته کویل (اختیاری)</label>
                             <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                                <input type="number" id="coilLengthScrapInput" inputmode="decimal" step="any" min="0" value="0" placeholder="0" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2 text-sm font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                                <input type="text" id="coilLengthScrapInput" inputmode="decimal" step="any" min="0" value="0" placeholder="0" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2 text-sm font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                                 <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 flex items-center border-r border-slate-200 select-none">درصد (%)</span>
                             </div>
                         </div>
@@ -364,7 +365,7 @@
                         <div>
                             <label for="barLengthInput" class="block text-xs font-semibold text-slate-600 mb-1.5">طول شاخه استاندارد کارخانه</label>
                             <div class="flex rounded-xl shadow-sm overflow-hidden border border-slate-300 focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500">
-                                <input type="number" id="barLengthInput" inputmode="decimal" step="any" min="0" value="6" placeholder="مثلاً: 6 یا 12" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
+                                <input type="text" id="barLengthInput" inputmode="decimal" step="any" min="0" value="6" placeholder="مثلاً: 6 یا 12" oninput="calculateWeight()" class="w-full bg-slate-50 px-3.5 py-2.5 text-base font-bold text-slate-900 focus:bg-white focus:outline-none" dir="ltr">
                                 <select id="barLengthUnit" onchange="calculateWeight()" class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 border-r border-slate-200 focus:outline-none cursor-pointer">
                                     <option value="m" selected>متر (m)</option>
                                     <option value="cm">سانتی‌متر (cm)</option>
@@ -495,6 +496,7 @@
                     هنوز آیتمی به لیست اضافه نشده است.<br>
                     پس از محاسبه وزن، دکمه «افزودن به لیست برآورد» را بزنید.
                 </div>
+                <div id="bomItemsList" class="space-y-2.5"></div>
             </div>
 
             <!-- جمع کل سبد اقلام و دکمه‌های خروجی -->
@@ -536,7 +538,7 @@
         <section class="bg-slate-200/70 rounded-2xl p-4 border border-slate-300/70 text-xs text-slate-600 space-y-2">
             <h4 class="font-bold text-slate-800 flex items-center gap-1.5">
                 <svg class="w-4 h-4 text-industrial-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                نصب به عنوان اپلیکیشن روی گوشی (بدون نیاز به اینترنت)
+                افزودن میانبر برنامه به صفحه اصلی گوشی
             </h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                 <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200/80">
@@ -564,6 +566,36 @@
         let isGrossEnabled = false; // وضعیت فعال بودن محاسبه وزن ناخالص
         let grossMode = 'percent'; // 'percent' | 'stock'
         let bomItems = []; // آرایه نگهداری اقلام اضافه شده به سبد
+
+        // نرمال‌سازی ارقام فارسی/عربی و جداکننده اعشار در فیلدهای عددی
+        // (ورودی‌ها از نوع text هستند تا کیبورد فارسی هم کار کند)
+        const PERSIAN_DIGITS = '۰۱۲۳۴۵۶۷۸۹';
+        const ARABIC_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+        function normalizeNumericText(str) {
+            let out = '';
+            for (const ch of String(str)) {
+                const p = PERSIAN_DIGITS.indexOf(ch);
+                const a = ARABIC_DIGITS.indexOf(ch);
+                if (p >= 0) out += String(p);
+                else if (a >= 0) out += String(a);
+                else if (ch === '٫' || ch === '/' || ch === ',' || ch === '،') out += '.';
+                else if (ch === '٬') continue;
+                else out += ch;
+            }
+            out = out.replace(/[^0-9.]/g, '');
+            const firstDot = out.indexOf('.');
+            if (firstDot !== -1) {
+                out = out.slice(0, firstDot + 1) + out.slice(firstDot + 1).replace(/\./g, '');
+            }
+            return out;
+        }
+        document.addEventListener('input', (e) => {
+            const el = e.target;
+            if (el && el.tagName === 'INPUT' && el.type === 'text' && el.hasAttribute('inputmode')) {
+                const cleaned = normalizeNumericText(el.value);
+                if (cleaned !== el.value) el.value = cleaned;
+            }
+        }, true);
 
         // مقداردهی اولیه هنگام بارگذاری صفحه
         window.addEventListener('DOMContentLoaded', () => {
@@ -832,7 +864,8 @@
 
             const qtyRaw = Number(document.getElementById('commonQuantity').value);
             const qty = Number.isInteger(qtyRaw) && qtyRaw > 0 ? qtyRaw : 0;
-            document.getElementById('resultQtyText').textContent = qty.toLocaleString('fa-IR');
+            document.getElementById('qtyValidationMsg').classList.toggle('hidden', qty > 0);
+            document.getElementById('resultQtyText').textContent = qty.toLocaleString('en-US');
 
             let volumeMm3 = 0; // حجم یک عدد بر حسب میلی‌متر مکعب
             let specSummary = '';
@@ -923,10 +956,6 @@
                                 hasStockError = true;
                                 stockAlert.textContent = `عرض قطعه (${formatNumber(sheetWidthMm, 1)} mm) از عرض کویل (${formatNumber(coilWidthMm, 1)} mm) بیشتر است.`;
                                 stockAlert.classList.remove('hidden');
-                            } else if (lengthScrapPct >= 100) {
-                                hasStockError = true;
-                                stockAlert.textContent = 'درصد پرتی طولی باید کمتر از 100 باشد.';
-                                stockAlert.classList.remove('hidden');
                             } else {
                                 // طول تقریبی کویل از وزن خالص، عرض، ضخامت و چگالی محاسبه می‌شود.
                                 const coilLengthMm = (coilNetWeightKg * 1000000) /
@@ -943,21 +972,25 @@
                                 const capacityRows = Math.floor(usableLengthMm / (lengthMm * (1 + lengthScrapPct / 100)));
                                 const maxPiecesFromCoil = capacityRows * stripsCount;
 
+                                const coilKgPerMm = coilNetWeightKg / coilLengthMm;
+                                totalGrossWeightKg = coilKgPerMm * requiredCoilLengthMm;
+                                unitGrossWeightKg = qty > 0 ? totalGrossWeightKg / qty : 0;
+                                wasteWeightKg = Math.max(0, totalGrossWeightKg - totalNetWeightKg);
+                                wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
+
+                                const remainingLengthMm = Math.max(0, coilLengthMm - requiredCoilLengthMm);
+                                const remainingCoilWeightKg = Math.max(0, coilNetWeightKg - totalGrossWeightKg);
+                                nestingDetail = `کویل ${formatNumber(coilNetWeightKg, 1)} kg | طول تقریبی ${formatNumber(coilLengthMm / 1000, 1)} m | ${stripsCount} نوار در هر ردیف | ${rowsNeeded} ردیف برش | پرت کناره ${formatNumber(edgeTrimMm, 1)} mm (${formatNumber(widthWastePct, 1)}%) | طول مصرفی ${formatNumber(requiredCoilLengthMm / 1000, 2)} m | مانده کویل ${formatNumber(remainingCoilWeightKg, 1)} kg (${formatNumber(remainingLengthMm / 1000, 1)} m)`;
+
                                 if (requiredCoilLengthMm > usableLengthMm) {
-                                    hasStockError = true;
-                                    stockAlert.textContent = `وزن کویل برای این تیراژ کافی نیست. ظرفیت تقریبی این کویل: ${maxPiecesFromCoil.toLocaleString('fa-IR')} قطعه؛ تعداد درخواستی: ${qty.toLocaleString('fa-IR')} قطعه.`;
+                                    // هشدار (نه خطا): محاسبه انجام می‌شود ولی کسری کویل اعلام می‌شود
+                                    const shortageKg = totalGrossWeightKg - coilNetWeightKg;
+                                    const shortageM = (requiredCoilLengthMm - usableLengthMm) / 1000;
+                                    stockAlert.textContent = `⚠️ وزن کویل برای این تیراژ کافی نیست؛ کسری حدود ${formatNumber(shortageKg, 1)} kg (${formatNumber(shortageM, 1)} m). ظرفیت تقریبی کویل: ${formatNumber(maxPiecesFromCoil, 0)} قطعه، تعداد درخواستی: ${formatNumber(qty, 0)} قطعه.`;
                                     stockAlert.classList.remove('hidden');
+                                    nestingDetail += ` | ⚠️ کسری کویل: ${formatNumber(shortageKg, 1)} kg`;
                                 } else {
                                     stockAlert.classList.add('hidden');
-                                    const coilKgPerMm = coilNetWeightKg / coilLengthMm;
-                                    totalGrossWeightKg = coilKgPerMm * requiredCoilLengthMm;
-                                    unitGrossWeightKg = totalGrossWeightKg / qty;
-                                    wasteWeightKg = Math.max(0, totalGrossWeightKg - totalNetWeightKg);
-                                    wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
-
-                                    const remainingLengthMm = Math.max(0, coilLengthMm - requiredCoilLengthMm);
-                                    const remainingCoilWeightKg = Math.max(0, coilNetWeightKg - totalGrossWeightKg);
-                                    nestingDetail = `کویل ${formatNumber(coilNetWeightKg, 1)} kg | طول تقریبی ${formatNumber(coilLengthMm / 1000, 1)} m | ${stripsCount} نوار در هر ردیف | ${rowsNeeded} ردیف برش | پرت کناره ${formatNumber(edgeTrimMm, 1)} mm (${formatNumber(widthWastePct, 1)}%) | طول مصرفی ${formatNumber(requiredCoilLengthMm / 1000, 2)} m | مانده کویل ${formatNumber(remainingCoilWeightKg, 1)} kg (${formatNumber(remainingLengthMm / 1000, 1)} m)`;
                                 }
                             }
                         } else {
@@ -985,7 +1018,7 @@
                                 const barFactor = totalStockLengthMm / totalNetLengthMm;
 
                                 totalGrossWeightKg = totalNetWeightKg * barFactor;
-                                unitGrossWeightKg = totalGrossWeightKg / qty;
+                                unitGrossWeightKg = qty > 0 ? totalGrossWeightKg / qty : 0;
                                 wasteWeightKg = Math.max(0, totalGrossWeightKg - totalNetWeightKg);
                                 wasteSharePercent = totalGrossWeightKg > 0 ? (wasteWeightKg / totalGrossWeightKg) * 100 : 0;
 
@@ -1017,7 +1050,7 @@
                     document.getElementById('grossUnitSubtext').textContent = 'نامعتبر';
                     document.getElementById('wasteWeightKg').textContent = '---';
                     document.getElementById('wastePercentBadge').textContent = 'خطا';
-                    document.getElementById('nestingDetailText').textContent = 'لطفاً عرض کویل یا طول شاخه استاندارد را اصلاح کنید.';
+                    document.getElementById('nestingDetailText').textContent = (stockAlert.textContent || 'ورودی‌های روش محاسبه را بررسی کنید.');
                 } else {
                     document.getElementById('grossWeightKg').textContent = formatNumber(totalGrossWeightKg, 2);
                     document.getElementById('grossWeightTon').textContent = `${(totalGrossWeightKg / 1000).toFixed(3)} ton`;
@@ -1121,8 +1154,7 @@
             badge.textContent = bomItems.length;
 
             if (bomItems.length === 0) {
-                container.innerHTML = '';
-                container.appendChild(emptyState);
+                document.getElementById('bomItemsList').innerHTML = '';
                 emptyState.classList.remove('hidden');
                 summaryFooter.classList.add('hidden');
                 clearBtn.classList.add('hidden');
@@ -1159,7 +1191,7 @@
                                 </div>
                                 ${item.subtitle ? `<p class="text-[11px] text-slate-500 pr-6">${escapeHtml(item.subtitle)}</p>` : ''}
                                 <div class="flex flex-wrap items-center gap-1.5 pr-6 pt-0.5 text-[11px] text-slate-600">
-                                    <span class="bg-white px-2 py-0.5 rounded border border-slate-200">${escapeHtml(item.material.split('(')[0].trim())}</span>
+                                    <span class="bg-white px-2 py-0.5 rounded border border-slate-200">${escapeHtml(String(item.material ?? '').split('(')[0].trim())}</span>
                                     <span>تعداد: <b>${item.qty}</b></span>
                                 </div>
                             </div>
@@ -1189,7 +1221,7 @@
                 `;
             });
 
-            container.innerHTML = html;
+            document.getElementById('bomItemsList').innerHTML = html;
             document.getElementById('bomNetTotalKg').textContent = `${formatNumber(grandNetKg, 2)} kg`;
             document.getElementById('bomWasteTotalKg').textContent = `${formatNumber(grandWasteKg, 2)} kg`;
             document.getElementById('bomGrossTotalKg').textContent = `${formatNumber(grandGrossKg, 2)} kg`;
@@ -1220,7 +1252,7 @@
 
                 lines.push(`${idx + 1}. *${item.title}*`);
                 if (item.subtitle) lines.push(`   مشخصات: ${item.subtitle}`);
-                lines.push(`   جنس: ${item.material} | تعداد: ${item.qty} عدد`);
+                lines.push(`   جنس: ${item.material ?? '-'} | تعداد: ${item.qty ?? '-'} عدد`);
                 lines.push(`   • وزن خالص: ${formatNumber(netKg, 2)} kg`);
                 if (wasteKg > 0) {
                     lines.push(`   • پرتی (${wastePct.toFixed(1)}%): ${formatNumber(wasteKg, 2)} kg`);
@@ -1239,26 +1271,32 @@
 
             const reportText = lines.join('\n');
 
-            const textArea = document.createElement('textarea');
-            textArea.value = reportText;
-            textArea.style.position = 'fixed';
-            textArea.style.left = '-9999px';
-            textArea.style.top = '0';
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    showToast('گزارش کامل در حافظه کپی شد! آماده ارسال', '📋');
-                } else {
-                    showToast('خطا در کپی کردن متن', '⚠️');
+            const fallbackCopy = () => {
+                const textArea = document.createElement('textarea');
+                textArea.value = reportText;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                textArea.style.top = '0';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    const successful = document.execCommand('copy');
+                    showToast(successful ? 'گزارش کامل در حافظه کپی شد! آماده ارسال' : 'خطا در کپی کردن متن',
+                              successful ? '📋' : '⚠️');
+                } catch (err) {
+                    showToast('مرورگر اجازه کپی خودکار نداد', '⚠️');
                 }
-            } catch (err) {
-                showToast('مرورگر اجازه کپی خودکار نداد', '⚠️');
+                document.body.removeChild(textArea);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(reportText)
+                    .then(() => showToast('گزارش کامل در حافظه کپی شد! آماده ارسال', '📋'))
+                    .catch(fallbackCopy);
+            } else {
+                fallbackCopy();
             }
-            document.body.removeChild(textArea);
         }
 
         /**
@@ -1352,8 +1390,10 @@
          */
         function csvEscape(str) {
             if (!str) return '""';
-            const cleaned = String(str).replace(/"/g, '""');
-            return `"${cleaned}"`;
+            let text = String(str);
+            // جلوگیری از تفسیر شدن متن به‌عنوان فرمول در اکسل
+            if (/^[=+\-@\t\r]/.test(text)) text = "'" + text;
+            return `"${text.replace(/"/g, '""')}"`;
         }
 
         /**
